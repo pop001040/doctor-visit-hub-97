@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import ServiceCard from "../components/ServiceCard";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { Home, Phone, Stethoscope, Activity, Heart, Flask } from "lucide-react";
+import { Home, Phone, Stethoscope, Activity, Heart, FlaskConical } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -33,7 +33,7 @@ const Services = () => {
     {
       title: "فحوصات مخبرية",
       description: "خدمة سحب العينات وإجراء التحاليل المخبرية في منزلك. نوفر نتائج دقيقة وسريعة مع الحفاظ على أعلى معايير الجودة.",
-      icon: Flask,
+      icon: FlaskConical,
     },
   ];
 
