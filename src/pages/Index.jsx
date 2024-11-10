@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import ServiceCard from "../components/ServiceCard";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { Home, Phone, Stethoscope, Activity, Heart, Flask } from "lucide-react";
+import { Home, Phone, Stethoscope, Activity, Heart, FlaskConical } from "lucide-react";
 
 const Index = () => {
   const services = [
@@ -33,7 +33,7 @@ const Index = () => {
     {
       title: "فحوصات مخبرية",
       description: "سحب عينات وإجراء الفحوصات المخبرية في منزلك",
-      icon: Flask,
+      icon: FlaskConical,
     },
   ];
 
