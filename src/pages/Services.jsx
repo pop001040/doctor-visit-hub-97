@@ -15,7 +15,7 @@ import { useRef } from "react";
 const Services = () => {
   const plugin = useRef(
     Autoplay({ 
-      delay: 4000,
+      delay: 3000,
       stopOnInteraction: true,
       stopOnMouseEnter: true,
     })
@@ -55,7 +55,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-24">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-24">
       <div className="container mx-auto px-4">
         <motion.h1 
           className="text-4xl font-bold text-center mb-16"
@@ -65,25 +65,26 @@ const Services = () => {
         >
           خدماتنا الطبية
         </motion.h1>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
+              dragFree: true,
             }}
             plugins={[plugin.current]}
             className="relative"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3 transition-all duration-300">
                   <ServiceCard {...service} />
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="hidden md:block">
-              <CarouselPrevious className="-left-12" />
-              <CarouselNext className="-right-12" />
+            <div className="absolute -left-4 -right-4 top-1/2 -translate-y-1/2 flex justify-between items-center">
+              <CarouselPrevious className="relative left-0 h-12 w-12 rounded-full border-2 border-primary/20 bg-white/80 hover:bg-white" />
+              <CarouselNext className="relative right-0 h-12 w-12 rounded-full border-2 border-primary/20 bg-white/80 hover:bg-white" />
             </div>
           </Carousel>
         </div>
