@@ -33,12 +33,14 @@ const Hero = () => {
           </motion.div>
           
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-white to-secondary bg-clip-text text-transparent drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            جلسات العلاج الطبيعي في منزلك، راحتك وسلامتك بين أيدينا.
+            جلسات العلاج الطبيعي في منزلك،
+            <br />
+            <span className="text-white">راحتك وسلامتك بين أيدينا.</span>
           </motion.h2>
 
           <motion.p
