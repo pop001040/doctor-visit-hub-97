@@ -3,7 +3,6 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import ServicesCarousel from "../components/ServicesCarousel";
-import Presentation from "../components/Presentation";
 
 const Index = () => {
   return (
@@ -13,7 +12,6 @@ const Index = () => {
         <Hero />
         <div className="bg-white py-16">
           <ServicesCarousel />
-          <Presentation />
         </div>
         <Footer />
         <WhatsAppButton />
