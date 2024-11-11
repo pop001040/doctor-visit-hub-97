@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import ServicesCarousel from "../components/ServicesCarousel";
 import ServiceCard from "../components/ServiceCard";
-import { Stethoscope, Phone, Activity, Heart, UserRound, FileHeart, Syringe, Flask } from "lucide-react";
+import { Stethoscope, Phone, Activity, Heart, UserRound, FileHeart, Syringe, TestTubes } from "lucide-react";
 import ParallaxSection from "../components/ParallaxSection";
 
 const services = [
@@ -41,7 +41,7 @@ const services = [
   {
     title: "التحاليل المنزلية",
     description: "سحب عينات وإجراء التحاليل في منزلك",
-    icon: Flask,
+    icon: TestTubes,
   },
   {
     title: "الحقن والمحاليل",
