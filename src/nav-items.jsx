@@ -1,4 +1,7 @@
 import { Home, Info, Phone } from "lucide-react";
+import Index from "./pages/Index";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export const navItems = [
   {
