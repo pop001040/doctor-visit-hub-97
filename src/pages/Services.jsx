@@ -54,18 +54,8 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-24">
+    <div className="min-h-screen bg-gradient-to-b from-primary/5 to-primary/10 py-24">
       <div className="container mx-auto px-4">
-        <motion.h1 
-          className="text-4xl font-bold text-center mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          خدماتنا الطبية
-        </motion.h1>
-        <p className="text-gray-600 text-center mb-16">نقدم مجموعة متكاملة من الخدمات الطبية الرائدة لضمان راحتك وصحتك</p>
-        
         <div className="max-w-7xl mx-auto">
           <Carousel
             opts={{
