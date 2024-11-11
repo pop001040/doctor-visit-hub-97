@@ -1,4 +1,4 @@
-import { Home, Phone, ClipboardList, Activity, Heart, FlaskConical, FileText, Users, MessageCircle } from "lucide-react";
+import { Home, Phone, ClipboardList, Activity, Heart, FlaskConical, FileText, Users, MessageCircle, Stethoscope } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import Services from "./pages/Services.jsx";
 import BookingForm from "./pages/BookingForm.jsx";
@@ -17,15 +17,15 @@ export const navItems = [
     page: <Index />,
   },
   {
-    title: "خدمات دكتوركير",
+    title: "خدمات زيارة طبيب",
     to: "/services",
     icon: <ClipboardList className="h-4 w-4" />,
     page: <Services />,
   },
   {
-    title: "دكتور كشف منزلي",
+    title: "زيارة طبيب للمنزل",
     to: "/home-visit",
-    icon: <Activity className="h-4 w-4" />,
+    icon: <Stethoscope className="h-4 w-4" />,
     page: <Services />,
   },
   {
@@ -65,7 +65,7 @@ export const navItems = [
     page: <Services />,
   },
   {
-    title: "اتصل بنا",
+    title: "احجز زيارة طبيب",
     to: "/contact",
     icon: <MessageCircle className="h-4 w-4" />,
     page: <BookingForm />,

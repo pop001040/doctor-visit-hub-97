@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Stethoscope } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -18,16 +18,33 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
-          <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+          <motion.div 
+            className="flex items-center gap-2 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            خدمة جلسات
-            <br />
-            العلاج الطبيعي بالمنزل
-          </motion.h1>
+            <Stethoscope className="w-10 h-10 text-primary" />
+            <h1 className="text-2xl font-bold text-white">زيارة طبيب</h1>
+          </motion.div>
+          
+          <motion.h2 
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            خدمة زيارة طبيب للمنزل
+          </motion.h2>
+
+          <motion.p
+            className="text-xl text-gray-200 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            أفضل خدمة طبية في المنزل بين يديك
+          </motion.p>
           
           <motion.div
             className="flex flex-col sm:flex-row gap-4 mt-8"

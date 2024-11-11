@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import ServiceCard from "../components/ServiceCard";
 import WhatsAppButton from "../components/WhatsAppButton";
+import Footer from "../components/Footer";
 import { Home, Phone, Stethoscope, Activity, Heart, FlaskConical } from "lucide-react";
 import { motion } from "framer-motion";
 import ParallaxSection from "../components/ParallaxSection";
@@ -68,6 +69,7 @@ const Index = () => {
           ))}
         </div>
       </ParallaxSection>
+      <Footer />
       <WhatsAppButton />
     </div>
   );
