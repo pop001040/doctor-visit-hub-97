@@ -38,7 +38,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            خدمة زيارة طبيب للمنزل
+            جلسات العلاج الطبيعي في منزلك، راحتك وسلامتك بين أيدينا.
           </motion.h2>
 
           <motion.p
