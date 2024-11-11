@@ -54,7 +54,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary/5 to-primary/10 py-24">
+    <div className="min-h-screen bg-[#003366] py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <Carousel
@@ -69,17 +69,17 @@ const Services = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {services.map((service, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-white/50 backdrop-blur-sm p-8 rounded-lg text-right h-full border border-primary/10 hover:border-primary/20 transition-all duration-300">
-                    <service.icon className="w-12 h-12 text-primary mb-6" />
-                    <h3 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg text-right h-full border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <service.icon className="w-12 h-12 text-white mb-6" />
+                    <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
+                    <p className="text-gray-200 leading-relaxed">{service.description}</p>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
             <div className="absolute -left-4 -right-4 top-1/2 -translate-y-1/2 flex justify-between items-center">
-              <CarouselPrevious className="relative left-0 h-12 w-12 rounded-full border-2 border-primary/20 bg-white/80 hover:bg-white" />
-              <CarouselNext className="relative right-0 h-12 w-12 rounded-full border-2 border-primary/20 bg-white/80 hover:bg-white" />
+              <CarouselPrevious className="relative left-0 h-12 w-12 rounded-full border-2 border-white/20 bg-white/10 hover:bg-white/20" />
+              <CarouselNext className="relative right-0 h-12 w-12 rounded-full border-2 border-white/20 bg-white/10 hover:bg-white/20" />
             </div>
           </Carousel>
         </div>

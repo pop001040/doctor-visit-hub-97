@@ -6,7 +6,7 @@ import ParallaxSection from "../components/ParallaxSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+    <div className="min-h-screen bg-[#003366]">
       <Hero />
       <Footer />
       <WhatsAppButton />
