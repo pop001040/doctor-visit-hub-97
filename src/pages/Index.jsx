@@ -1,15 +1,17 @@
 import Hero from "../components/Hero";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Footer from "../components/Footer";
-import { motion } from "framer-motion";
-import ParallaxSection from "../components/ParallaxSection";
+import Navigation from "../components/Navigation";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#003366]">
-      <Hero />
-      <Footer />
-      <WhatsAppButton />
+      <Navigation />
+      <div className="pt-16">
+        <Hero />
+        <Footer />
+        <WhatsAppButton />
+      </div>
     </div>
   );
 };
