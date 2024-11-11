@@ -1,6 +1,5 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import ServiceCard from "../components/ServiceCard";
-import WhatsAppButton from "../components/WhatsAppButton";
 import { Home, Phone, Stethoscope, Activity, Heart, FlaskConical } from "lucide-react";
 import {
   Carousel,
@@ -10,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Services = () => {
   const plugin = useRef(
@@ -24,32 +23,32 @@ const Services = () => {
   const services = [
     {
       title: "زيارة طبيب منزلية",
-      description: "نوفر خدمة زيارة الطبيب المنزلية مع نخبة من الأطباء المتخصصين في مختلف المجالات الطبية. نضمن لك رعاية طبية عالية الجودة في راحة منزلك.",
+      description: "خدمة طبية متكاملة في منزلك مع أفضل الأطباء المتخصصين",
       icon: Home,
     },
     {
       title: "استشارات طبية هاتفية",
-      description: "احصل على استشارة طبية فورية عبر الهاتف من أطباء متخصصين. خدمة متاحة على مدار الساعة للإجابة على استفساراتك الطبية.",
+      description: "تواصل مع أطبائنا عبر الهاتف للحصول على الاستشارة الطبية",
       icon: Phone,
     },
     {
       title: "التمريض المنزلي",
-      description: "فريق تمريض مؤهل يقدم خدمات الرعاية التمريضية في منزلك. نوفر رعاية ما بعد العمليات الجراحية والرعاية المستمرة للحالات المزمنة.",
+      description: "رعاية تمريضية متخصصة على مدار الساعة في منزلك",
       icon: Stethoscope,
     },
     {
       title: "العلاج الطبيعي",
-      description: "جلسات علاج طبيعي متخصصة في منزلك مع أخصائيين مؤهلين. نساعدك في التعافي وتحسين قدراتك الحركية بأحدث تقنيات العلاج الطبيعي.",
+      description: "جلسات علاج طبيعي متخصصة لتحسين صحتك وعافيتك",
       icon: Activity,
     },
     {
       title: "رعاية كبار السن",
-      description: "خدمات رعاية شاملة لكبار السن تشمل المتابعة الطبية، الرعاية الشخصية، والدعم النفسي. نضمن راحة ورفاهية المسنين في منازلهم.",
+      description: "خدمات رعاية متكاملة لكبار السن في منازلهم",
       icon: Heart,
     },
     {
       title: "فحوصات مخبرية",
-      description: "خدمة سحب العينات وإجراء التحاليل المخبرية في منزلك. نوفر نتائج دقيقة وسريعة مع الحفاظ على أعلى معايير الجودة.",
+      description: "سحب عينات وإجراء الفحوصات المخبرية في منزلك",
       icon: FlaskConical,
     },
   ];
@@ -58,13 +57,15 @@ const Services = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-24">
       <div className="container mx-auto px-4">
         <motion.h1 
-          className="text-4xl font-bold text-center mb-16"
+          className="text-4xl font-bold text-center mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           خدماتنا الطبية
         </motion.h1>
+        <p className="text-gray-600 text-center mb-16">نقدم مجموعة متكاملة من الخدمات الطبية الرائدة لضمان راحتك وصحتك</p>
+        
         <div className="max-w-7xl mx-auto">
           <Carousel
             opts={{
@@ -77,8 +78,12 @@ const Services = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {services.map((service, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3 transition-all duration-300">
-                  <ServiceCard {...service} />
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-white/50 backdrop-blur-sm p-8 rounded-lg text-right h-full border border-primary/10 hover:border-primary/20 transition-all duration-300">
+                    <service.icon className="w-12 h-12 text-primary mb-6" />
+                    <h3 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
