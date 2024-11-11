@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Phone, MessageCircle, Stethoscope } from "lucide-react";
+import { useState } from "react";
+import BookingDialog from "./BookingDialog";
 
 const Hero = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen">
       {/* Background image with overlay */}
@@ -55,10 +59,9 @@ const Hero = () => {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white gap-2 text-lg px-8"
-              onClick={() => window.location.href = "tel:01113939319"}
+              onClick={() => setIsDialogOpen(true)}
             >
-              <Phone className="w-5 h-5" />
-              الهاتف
+              احجز الآن
             </Button>
             
             <Button
@@ -83,6 +86,8 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      <BookingDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </div>
   );
 };
