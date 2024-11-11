@@ -18,7 +18,6 @@ const Services = () => {
       delay: 4000,
       stopOnInteraction: true,
       stopOnMouseEnter: true,
-      rootNode: (emblaRoot) => emblaRoot.parentElement,
     })
   );
 
@@ -66,26 +65,28 @@ const Services = () => {
         >
           خدماتنا الطبية
         </motion.h1>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[plugin.current]}
-          className="w-full max-w-6xl mx-auto relative"
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {services.map((service, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                <div className="h-full">
+        <div className="max-w-6xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[plugin.current]}
+            className="relative"
+          >
+            <CarouselContent>
+              {services.map((service, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <ServiceCard {...service} />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -right-12" />
-          <CarouselNext className="hidden md:flex -left-12" />
-        </Carousel>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12" />
+              <CarouselNext className="-right-12" />
+            </div>
+          </Carousel>
+        </div>
       </div>
       <WhatsAppButton />
     </div>
