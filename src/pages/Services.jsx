@@ -13,11 +13,12 @@ import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 
 const Services = () => {
-  const autoplayRef = useRef(
+  const plugin = useRef(
     Autoplay({ 
-      delay: 3000, // 3 seconds delay between slides
-      stopOnInteraction: true, // stops on user interaction
-      stopOnMouseEnter: true, // stops on mouse enter
+      delay: 4000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
     })
   );
 
@@ -70,20 +71,15 @@ const Services = () => {
             align: "start",
             loop: true,
           }}
-          plugins={[autoplayRef.current]}
-          className="w-full max-w-6xl mx-auto"
+          plugins={[plugin.current]}
+          className="w-full max-w-6xl mx-auto relative"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {services.map((service, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="h-full"
-                >
+                <div className="h-full">
                   <ServiceCard {...service} />
-                </motion.div>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
