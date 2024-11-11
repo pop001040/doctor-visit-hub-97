@@ -9,8 +9,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const Services = () => {
+  const autoplayRef = useRef(
+    Autoplay({ 
+      delay: 3000, // 3 seconds delay between slides
+      stopOnInteraction: true, // stops on user interaction
+      stopOnMouseEnter: true, // stops on mouse enter
+    })
+  );
+
   const services = [
     {
       title: "زيارة طبيب منزلية",
@@ -60,6 +70,7 @@ const Services = () => {
             align: "start",
             loop: true,
           }}
+          plugins={[autoplayRef.current]}
           className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
@@ -76,8 +87,8 @@ const Services = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
+          <CarouselPrevious className="hidden md:flex -right-12" />
+          <CarouselNext className="hidden md:flex -left-12" />
         </Carousel>
       </div>
       <WhatsAppButton />
