@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
 import { Home, Phone, Stethoscope, Activity, Heart, FlaskConical } from "lucide-react";
 import {
   Carousel,
@@ -56,41 +55,31 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-24">
       <div className="container mx-auto px-4">
-        <motion.h1 
-          className="text-4xl font-bold text-center mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          خدماتنا الطبية
-        </motion.h1>
+        <h1 className="text-4xl font-bold text-center mb-4">خدماتنا الطبية</h1>
         <p className="text-gray-600 text-center mb-16">نقدم مجموعة متكاملة من الخدمات الطبية الرائدة لضمان راحتك وصحتك</p>
         
         <div className="max-w-7xl mx-auto">
           <Carousel
             opts={{
-              align: "center",
+              align: "start",
               loop: true,
-              dragFree: true,
             }}
             plugins={[plugin.current]}
             className="relative"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-white/50 backdrop-blur-sm p-8 rounded-lg text-right h-full border border-primary/10 hover:border-primary/20 transition-all duration-300">
-                    <service.icon className="w-12 h-12 text-primary mb-6" />
-                    <h3 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-0">
+                  <div className="flex flex-col items-center text-center p-8">
+                    <service.icon className="w-16 h-16 text-primary mb-6" />
+                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                    <p className="text-gray-600">{service.description}</p>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="absolute -left-4 -right-4 top-1/2 -translate-y-1/2 flex justify-between items-center">
-              <CarouselPrevious className="relative left-0 h-12 w-12 rounded-full border-2 border-primary/20 bg-white/80 hover:bg-white" />
-              <CarouselNext className="relative right-0 h-12 w-12 rounded-full border-2 border-primary/20 bg-white/80 hover:bg-white" />
-            </div>
+            <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2 h-12 w-12" />
+            <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2 h-12 w-12" />
           </Carousel>
         </div>
       </div>
