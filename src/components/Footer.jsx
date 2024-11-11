@@ -110,12 +110,12 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">COMING SOON</p>
             <div className="flex flex-col gap-4">
               <img
-                src="/images/google-play.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Google Play"
                 className="h-12 w-auto opacity-50 cursor-not-allowed"
               />
               <img
-                src="/images/app-store.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                 alt="App Store"
                 className="h-12 w-auto opacity-50 cursor-not-allowed"
               />
